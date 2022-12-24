@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>North By North East</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag(
+          "application",
+          "data-turbo-track": "reload",
+          defer: true
+        ) %>
+  </head>
+
+  <body>
+    <section class="py-12 px-6">
+      <%= render "layouts/nav" %>
+      <div class="container mx-auto">
+        <div class="mt-6">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= yield %>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

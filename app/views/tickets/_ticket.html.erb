@@ -1,0 +1,40 @@
+<div id="<%= dom_id ticket %>">
+  <p>
+    <strong>Concert:</strong>
+    <%= ticket.concert_id %>
+  </p>
+
+  <p>
+    <strong>Row:</strong>
+    <%= ticket.row %>
+  </p>
+
+  <p>
+    <strong>Number:</strong>
+    <%= ticket.number %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= ticket.user_id %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= ticket.status %>
+  </p>
+
+  <p>
+    <strong>Ticket order:</strong>
+    <%= ticket.ticket_order_id %>
+  </p>
+
+  <p>
+    <strong>Shopping cart:</strong>
+    <%= ticket.shopping_cart_id %>
+  </p>
+
+  <p>
+    <%= link_to "Show this ticket", ticket %>
+  </p>
+</div>

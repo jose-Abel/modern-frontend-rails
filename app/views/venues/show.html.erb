@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @venue %>
+
+<div>
+  <%= link_to "Edit this venue", edit_venue_path(@venue) %> |
+  <%= link_to "Back to venues", venues_path %>
+
+  <%= button_to "Destroy this venue", venue_path(@venue), method: :delete %>
+</div>

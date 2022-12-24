@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @gig %>
+
+<div>
+  <%= link_to "Edit this gig", edit_gig_path(@gig) %> |
+  <%= link_to "Back to gigs", gigs_path %>
+
+  <%= button_to "Destroy this gig", gig_path(@gig), method: :delete %>
+</div>

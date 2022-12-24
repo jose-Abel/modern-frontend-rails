@@ -1,0 +1,13 @@
+<section class="my-4">
+  <div class="text-3xl font-bold">Favorite Concerts</div>
+  <div class="text-xl font-bold" id="no-favorites">
+    <% if current_user.favorites.empty? %>
+      No favorite concerts yet
+    <% end %>
+  </div>
+  <div id="favorite-concerts-list">
+    <% current_user.favorites.each do |favorite| %>
+      <%= render(favorite) %>
+    <% end %>
+  </div>
+</section>
