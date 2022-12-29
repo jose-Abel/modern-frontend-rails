@@ -14,19 +14,25 @@
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/eslint-parser": "^7.16.3",
+    "@babel/core": "^7.17.9",
+    "@babel/eslint-parser": "^7.17.0",
     "@babel/plugin-syntax-class-properties": "^7.12.13",
-    "@babel/preset-env": "^7.16.4",
-    "cypress": "9.0.0",
-    "eslint": "^8.2.0",
-    "eslint-config-prettier": "^8.3.0",
+    "@babel/preset-env": "^7.16.11",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "cypress": "9.5.4",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "2.4.1"
+    "prettier": "2.6.2",
+    "tsc-watch": "^5.0.3",
+    "typescript": "^4.6.3"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
+    "build:js": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css",
+    "failure:js": "rm ./app/assets/builds/application.js && rm ./app/assets/builds/application.js.map",
+    "dev": "tsc-watch --noClear -p tsconfig.json --onSuccess \"yarn build:js\" --onFailure \"yarn failure:js\""
   }
 }
