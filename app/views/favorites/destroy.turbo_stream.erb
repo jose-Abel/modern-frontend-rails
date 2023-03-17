@@ -5,3 +5,4 @@
 		No favorite concerts yet
 	<% end %>
 <% end %>
+<%= turbo_stream.update("favorites-count", plain: current_user.favorites.count) %>
