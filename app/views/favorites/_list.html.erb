@@ -1,15 +1,22 @@
 <%= turbo_frame_tag("favorite-concerts") do %>
-  <section class="my-4">
-    <div class="text-3xl font-bold">Favorite Concerts</div>
-    <div class="text-xl font-bold" id="no-favorites">
-      <% if current_user.favorites.empty? %>
-        No favorite concerts yet
-      <% end %>
+  <section class="my-4" data-controller="favorite-toggle" data-favorite-toggle-visible-value="true">
+    <div class="text-3xl font-bold">
+      Favorite Concerts
+      <button class="<%= SimpleForm.button_class %> py-1 text-xl font-semibold" data-favorite-toggle-target="elementWithText" data-action="click->favorite-toggle#toggle">
+        Hide
+      </button>
     </div>
-    <div id="favorite-concerts-list">
-      <% current_user.favorites.each do |favorite| %>
-        <%= render(favorite) %>
-      <% end %>
+    <div data-favorite-toggle-target="elementToHide">
+      <div class="text-xl font-bold" id="no-favorites">
+        <% if current_user.favorites.empty? %>
+          No favorite concerts yet
+        <% end %>
+      </div>
+      <div id="favorite-concerts-list">
+        <% current_user.favorites.each do |favorite| %>
+          <%= render(favorite) %>
+        <% end %>
+      </div>
     </div>
   </section>
 <% end %>
