@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
-import FavoriteToggleController from "./favorite_toggle_controller.ts"
-application.register("favorite-toggle", FavoriteToggleController)
+import CssController from "./css_controller.ts"
+application.register("css", CssController)
+
+import TextController from "./text_controller.ts"
+application.register("text", TextController)
