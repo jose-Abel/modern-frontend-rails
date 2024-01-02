@@ -1,6 +1,6 @@
 <span>Favorite Count:</span>
 <%= turbo_frame_tag("favorites-count-number") do %>
-	<span id="favorites-count" class="ml-2">
-		<%= current_user&.favorites&.count || 0 %>
-	</span>
+  <span id="favorites-count" class="ml-2">
+    <%= current_user&.favorites&.count || 0 %>
+  </span>
 <% end %>

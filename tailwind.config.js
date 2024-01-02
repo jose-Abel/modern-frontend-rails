@@ -5,13 +5,15 @@
  * courses, books, articles, and the like. Contact us if you are in doubt.
  * We make no guarantees that this code is fit for any purpose.
  * Visit https://pragprog.com/titles/nrclient2 for more book information.
- ***/
+***/
 module.exports = {
   content: [
     "./app/views/**/*.html.erb",
     "./app/views/**/*.turbostream.erb",
     "./app/helpers/**/*.rb",
     "./app/javascript/**/*.js",
+    "./app/javascript/**/*.tsx",
+    "./app/javascript/**/*.ts",
     "./config/initializers/simple_form_tailwind.rb",
   ],
 }

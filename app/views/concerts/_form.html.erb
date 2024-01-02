@@ -1,12 +1,14 @@
 <%= turbo_frame_tag(dom_id(concert)) do %>
-  <%= simple_form_for(@concert) do |f| %>
-    <% if f.object.errors.present? %>
-      <div class="text-red-500 border-red-800 font-bold border-2 p-2 mb-2">
-        <%= f.error_notification %>
-        <%= f.error_notification(message: f.object.errors.full_messages.to_sentence) %>
-      </div>
-    <% end %>
-    <article class="my-4">
+  <article class="my-4">
+    <%= simple_form_for(@concert) do |f| %>
+      <% if f.object.errors.present? %>
+        <div class="text-red-500 border-red-800 font-bold border-2 p-2 mb-2">
+          <%= f.error_notification %>
+          <%= f.error_notification(
+                message: f.object.errors.full_messages.to_sentence
+              ) %>
+        </div>
+      <% end %>
       <div class="grid gap-4 grid-cols-6">
         <div class="col-span-2 text-xl">
           <%= f.input :start_time %>
@@ -31,9 +33,13 @@
           <%= f.input :ilk, collection: Concert.ilks %>
           <%= f.input :access, collection: Concert.accesses %>
           <%= f.button :submit %>
-          <%= link_to("Cancel", concert_path(@concert, inline: true), class: "#{SimpleForm.button_class} py-2 mt-4") %>
+          <%= link_to(
+                "Cancel",
+                concert_path(@concert, inline: true),
+                class: "#{SimpleForm.button_class} py-2 mt-4"
+              ) %>
         </div>
       </div>
-    </article>
-  <% end %>
+    <% end %>
+  </article>
 <% end %>

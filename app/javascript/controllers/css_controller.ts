@@ -31,4 +31,3 @@ export default class CssController extends Controller {
     }
   }
 }
-

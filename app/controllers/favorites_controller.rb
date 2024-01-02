@@ -14,7 +14,10 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favorite.create(user: current_user, concert_id: params[:concert_id])
+    @favorite = Favorite.create(
+      user: current_user,
+      concert_id: params[:concert_id]
+    )
     respond_to do |format|
       format.turbo_stream
     end

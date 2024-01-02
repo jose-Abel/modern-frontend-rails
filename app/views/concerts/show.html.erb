@@ -38,7 +38,9 @@
     <span>Current Tickets Cost: &nbsp;</span>
     <span>$0.00</span>
   </div>
-  <div class="px-5 py-4 m-2 my-4 w-40 text-center text-white transition-colors duration-150 bg-gray-800 rounded-lg focus:shadow-outline hover:bg-black">
+  <div class="px-5 py-4 m-2 my-4 w-40 text-center text-white transition-colors
+              duration-150 bg-gray-800 rounded-lg focus:shadow-outline
+              hover:bg-black">
     Clear Tickets
   </div>
   <div>
@@ -51,24 +53,6 @@
       </select>
     </span>
   </div>
-  <table class="table">
-    <tbody>
-      <% @concert.venue.rows.times do |row| %>
-        <tr>
-          <% @concert.venue.seats_per_row.times do |seat| %>
-            <% ticket = @concert.find_ticket_at(row: row + 1, number: seat + 1) %>
-            <td>
-              <%= button_to(ticket_path(ticket.id), method: :patch) do %>
-                <div class="<%= color_for(ticket, current_user) %> p-4 m-2 border-black border-4 button hover:bg-blue-300 text-lg">
-                  <%= seat + 1 %>
-                </div>
-              <% end %>
-            </td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
   <div id="react-element" />
 </div>
 <div class="actions">

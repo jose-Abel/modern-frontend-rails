@@ -53,7 +53,12 @@ class ConcertsController < ApplicationController
         format.json { render :show, status: :ok, location: @concert }
       else
         format.html { render(:edit) }
-        format.json { render json: @concert.errors, status: :unprocessable_entity }
+        format.json {
+          render(
+            json: @concert.errors,
+            status: :unprocessable_entity
+          )
+        }
       end
     end
   end
