@@ -2,15 +2,20 @@
   "name": "app",
   "private": "true",
   "dependencies": {
+    "@babel/preset-react": "^7.23.3",
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/typography": "^0.5.2",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.4",
     "esbuild": "^0.14.36",
     "form-request-submit-polyfill": "^2.0.0",
     "postcss": "^8.4.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
