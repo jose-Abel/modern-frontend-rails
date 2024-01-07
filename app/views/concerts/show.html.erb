@@ -45,13 +45,6 @@
   </div>
   <div>
     <span class="header">How many tickets would you like?</span>
-    <span class="select">
-      <select>
-        <%= @concert.venue.seats_per_row.times do |seat| %>
-          <option><%= seat + 1 %></option>
-        <% end %>
-      </select>
-    </span>
   </div>
   <div id="react-element" />
 </div>

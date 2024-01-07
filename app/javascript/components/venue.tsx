@@ -1,26 +1,27 @@
 import * as React from "react"
-import Row from "./row"
+import VenueBody from "./venue_body"
+import VenueHeader from "./venue_header"
 
 interface VenueProps {
   rows: number
   seatsPerRow: number
 }
 
-const Venue = (props: VenueProps): React.ReactElement => {
-  const rowNumbers = Array.from(Array(props.seatsPerRow).keys())
-  const rowItems = rowNumbers.map((rowNumber) => {
-    return (
-      <Row
-        key={rowNumber}
-        rowNumber={rowNumber}
-        seatsPerRow={props.seatsPerRow}
-      />
-    )
-  })
+const Venue = ({ rows, seatsPerRow }: VenueProps): React.ReactElement => {
+  const [ticketsToBuyCount, setTicketsToBuyCount] = React.useState(1)
+
   return (
-    <table className="table">
-      <tbody>{rowItems}</tbody>
-    </table>
+    <>
+      <VenueHeader
+        seatsPerRow={seatsPerRow}
+        setTicketsToBuyCount={setTicketsToBuyCount}
+      />
+      <VenueBody
+        seatsPerRow={seatsPerRow}
+        rows={rows}
+        ticketsToBuyCount={ticketsToBuyCount}
+      />
+    </>
   )
 }
 
