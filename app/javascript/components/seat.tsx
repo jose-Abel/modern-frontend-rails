@@ -25,7 +25,7 @@ export const Seat = ({
     clickHandler(seatNumber)
   }
 
-  const cssClass = "p-4 m-2 border-black border-4 text-lg"
+  const cssClass = "p- m-2 border-black border-4 text-lg"
 
   return (
     <td>
