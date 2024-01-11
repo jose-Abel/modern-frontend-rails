@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.is-open {
+	transform: rotate(90deg);
+}
+
+.is-closed {
+	transform: rotate(-90deg);
+}

@@ -8,12 +8,18 @@
       Favorite Concerts
       <button
           class="<%= SimpleForm.button_class %> py-1 text-xl font-semibold"
-          data-controller="text"
-          data-text-target="elementWithText"
-          data-text-status-value="false"
-          data-text-off-value="Hide"
-          data-text-on-value="Show"
-          data-action="click->css#toggle click->text#toggle">
+          data-controller="css-flip"
+          data-css-flip-status-value="true"
+          data-css-flip-off-class="is-closed"
+          data-css-flip-on-class="is-open"
+          data-action="click->css#toggle click->css-flip#toggle">
+          <%= image_tag(
+            "chevron-right.svg",
+            width: 25,
+            height: 25,
+            class: "inline mb-3",
+            "data-css-flip-target": "elementToChange"
+          ) %>
       </button>
     </div>
     <div data-css-target="elementToChange">
